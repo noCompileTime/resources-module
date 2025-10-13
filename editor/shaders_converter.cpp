@@ -2,6 +2,22 @@
 
 namespace editor
 {
+    auto ShadersConverter::convert_each(const std::filesystem::path& input, const std::filesystem::path& output) -> void
+    {
+        if (!is_directory(output))
+        {
+            create_directory(output);
+        }
+
+        for (const auto& entry : std::filesystem::directory_iterator(input))
+        {
+            if (is_regular_file(entry))
+            {
+                convert_file(entry, output);
+            }
+        }
+    }
+
     auto ShadersConverter::convert_file(const std::filesystem::path& input, const std::filesystem::path& output) -> void
     {
         const auto out = output / input.filename();
