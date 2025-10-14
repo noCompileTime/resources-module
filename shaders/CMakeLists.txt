@@ -1,3 +1,3 @@
 #=======================================================================================================================
-target_compile_definitions(${PROJECT_NAME} PUBLIC DEFAULT_SHADERS_PATH="${CMAKE_CURRENT_SOURCE_DIR}")
+target_compile_definitions(${PROJECT_NAME} PUBLIC BASE_SHADERS_PATH="${CMAKE_CURRENT_SOURCE_DIR}")
 #=======================================================================================================================
