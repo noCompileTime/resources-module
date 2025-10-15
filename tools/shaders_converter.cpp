@@ -1,6 +1,6 @@
 #include "shaders_converter.hpp"
 
-namespace editor
+namespace tools
 {
     auto ShadersConverter::convert_each(const std::filesystem::path& input, const std::filesystem::path& output) -> void
     {
