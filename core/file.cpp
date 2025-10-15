@@ -14,7 +14,7 @@ namespace core
 
         std::vector<char> content(size);
 
-        stream.seekg(0, std::ios::beg);
+        stream.seekg(0,  std::ios::beg);
         stream. read(content.data(), size);
 
         return content;
