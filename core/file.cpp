@@ -4,7 +4,7 @@ namespace core
 {
     auto File::read(const std::filesystem::path& path, const int32_t mode) -> std::vector<char>
     {
-        assert(is_regular_file(path));
+      assert(is_regular_file(path));
 
         std::ifstream stream(path, std::ios::ate | mode);
                assert(stream.is_open());
