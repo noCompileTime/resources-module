@@ -15,5 +15,5 @@ layout (std140, binding = 1) uniform ubo_camera
 
 void main()
 {
-    gl_Position = vec4(in_position, 1.0);
+    gl_Position = model * vec4(in_position, 1.0);
 }
