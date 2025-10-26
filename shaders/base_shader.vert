@@ -10,10 +10,10 @@ layout (std140, binding = 0) uniform ubo_transform
 layout (std140, binding = 1) uniform ubo_camera
 {
     mat4 view;
-    mat4 proj;
+    mat4 projection;
 };
 
 void main()
 {
-    gl_Position = model * vec4(in_position, 1.0);
+    gl_Position = projection * view * model * vec4(in_position, 1.0);
 }
