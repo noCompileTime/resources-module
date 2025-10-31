@@ -11,12 +11,12 @@ namespace images
 
         stream.read(reinterpret_cast<char*>(&header), sizeof(tga_header));
 
-        const auto channels = header.pixel_depth / 8;
-        const auto size = header.width * header.height * channels;
+        const auto channels = header.pixel_depth  / 8;
+        const auto     size = header.width * header.height * channels;
 
-
-        std::vector<uint8_t> content(size);
-        stream.read(reinterpret_cast<char*>(content.data()), size);
+                       std::vector<uint8_t> content(size);
+        stream.read(reinterpret_cast<char*>(content.data()),  size);
+                                    assert(stream.gcount() == size);
 
         for (auto i = 0; i < size; i += channels)
         {
