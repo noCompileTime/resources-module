@@ -5,3 +5,5 @@
 #include <vector>
 
 #include <cassert>
+
+#include "data/image.hpp"
