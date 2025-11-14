@@ -3,13 +3,13 @@
 layout (location = 0) in vec2 in_position;
 layout (location = 1) in vec2 in_texcoord;
 
-layout (std140, binding = 0) uniform ubo_camera
+layout (binding  = 0, std140) uniform ubo_camera
 {
     mat4 view;
     mat4 projection;
 };
 
-layout (std140, binding = 1) uniform ubo_transform
+layout (binding  = 1, std140) uniform ubo_transform
 {
     mat4 model;
 };

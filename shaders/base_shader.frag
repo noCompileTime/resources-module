@@ -2,7 +2,7 @@
 
 layout (location = 0) out vec4 out_color;
 
-layout (std140, binding = 2) uniform ubo_material
+layout (binding  = 2, std140) uniform ubo_material
 {
     vec3 albedo_color;
 };
