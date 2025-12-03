@@ -31,7 +31,8 @@ namespace images
         {
             content,
             header.width,
-            header.height
+            header.height,
+            channels
         };
     }
 }
