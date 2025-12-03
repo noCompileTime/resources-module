@@ -29,9 +29,9 @@ namespace images
 
         return
         {
+            content,
             header.width,
-            header.height,
-            content
+            header.height
         };
     }
 }
