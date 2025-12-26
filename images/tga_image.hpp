@@ -1,5 +1,7 @@
 #pragma once
 
+#include "core/data/image.hpp"
+
 namespace images
 {
     class TgaImage
