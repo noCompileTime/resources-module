@@ -1,8 +1,8 @@
-#version 460
+#version 460 core
 
 layout (location = 0) in vec2 in_texcoord;
 
-layout (binding  = 2, std140) uniform ubo_material
+layout (binding = 2, std140) uniform ubo_material
 {
     vec3 albedo_color;
 };
