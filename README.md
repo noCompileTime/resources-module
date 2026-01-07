@@ -1,6 +1,6 @@
 # Resources Module
 
-`Work in progress`
+`Under development`
 
 ### About
 
