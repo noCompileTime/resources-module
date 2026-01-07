@@ -2,25 +2,28 @@
 
 namespace tools
 {
-    auto ShadersConverter::convert_each(const std::filesystem::path& input, const std::filesystem::path& output) -> void
+    auto ShadersConverter::convert_each(const std::filesystem::path& input, const std::filesystem::path& output, const int32_t seconds) -> void
     {
-      assert(is_directory(input));
-
-        if (!is_directory(output))
+        if (seconds != 0)
         {
-            create_directory(output);
-        }
+          assert(is_directory(input));
 
-        for (const auto& entry : std::filesystem::directory_iterator(input))
-        {
-            if (is_regular_file(entry))
+            if (!is_directory(output))
             {
-                convert_file(entry, output);
+                create_directory(output);
+            }
+
+            for (const auto& entry : std::filesystem::directory_iterator(input))
+            {
+                if (is_regular_file(entry))
+                {
+                    convert_file(entry.path(), output, seconds);
+                }
             }
         }
     }
 
-    auto ShadersConverter::convert_file(const std::filesystem::path& input, const std::filesystem::path& output) -> void
+    auto ShadersConverter::convert_file(const std::filesystem::path& input, const std::filesystem::path& output, const int32_t seconds) -> void
     {
           assert(is_directory(output));
 
@@ -29,10 +32,17 @@ namespace tools
         if (const auto ext  = input.extension().string();
                        ext == ".vert" || ext == ".frag")
         {
-            const auto cmd = std::format("glslangvalidator -V -G -S {} -o {} {}", ext.substr(1), out.string(), input.generic_string());
-            const auto err = std::system(cmd.c_str());
+            const auto   now_t = std::filesystem::file_time_type::clock::now();
+            const auto lastw_t = last_write_time(input);
 
-               assert(!err);
+            if (const auto age = std::chrono::duration_cast<std::chrono::seconds>(now_t - lastw_t).count();
+                           age < seconds || seconds == -1)
+            {
+                const auto cmd = std::format("glslangvalidator -V -G -S {} -o {} {}", ext.substr(1), out.string(), input.generic_string());
+                const auto err = std::system(cmd.c_str());
+
+                   assert(!err);
+            }
         }
     }
 }
