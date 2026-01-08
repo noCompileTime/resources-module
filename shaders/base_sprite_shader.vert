@@ -3,6 +3,8 @@
 layout (location = 0) in vec2 in_position;
 layout (location = 1) in vec2 in_texcoord;
 
+layout (location = 0) out vec2 out_texcoord;
+
 layout (binding = 0, std140) uniform ubo_camera
 {
     mat4 view;
@@ -14,7 +16,10 @@ layout (binding = 1, std140) uniform ubo_transform
     mat4 model;
 };
 
-layout (location = 0) out vec2 out_texcoord;
+out gl_PerVertex
+{
+    vec4 gl_Position;
+};
 
 void main()
 {
