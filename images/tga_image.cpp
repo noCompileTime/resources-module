@@ -29,10 +29,10 @@ namespace images
 
         return
         {
-            content,
             header.width,
             header.height,
-            channels
+            channels,
+            content
         };
     }
 }
