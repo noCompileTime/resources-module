@@ -75,7 +75,7 @@ namespace models
                         normal = std::stoi(part) - 1;
                     }
 
-                    data.faces.emplace_back(position, texcoord, normal);
+                    data.indices.emplace_back(position, texcoord, normal);
                 }
             }
         }
