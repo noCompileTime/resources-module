@@ -19,8 +19,8 @@ namespace models
                 continue;
             }
 
-            std::stringstream line_stream(line);
             std::string prefix;
+            std::stringstream line_stream(line);
 
             line_stream >> prefix;
 
