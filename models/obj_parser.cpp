@@ -55,24 +55,24 @@ namespace models
 
                 while (line_stream >> token)
                 {
-                    std::string part;
+                    std::string index;
                     std::stringstream token_stream(token);
 
                     int32_t position, texcoord, normal;
 
-                    if (std::getline(token_stream, part, '/') && !part.empty())
+                    if (std::getline(token_stream, index, '/') && !index.empty())
                     {
-                        position = std::stoi(part) - 1;
+                        position = std::stoi(index) - 1;
                     }
 
-                    if (std::getline(token_stream, part, '/') && !part.empty())
+                    if (std::getline(token_stream, index, '/') && !index.empty())
                     {
-                        texcoord = std::stoi(part) - 1;
+                        texcoord = std::stoi(index) - 1;
                     }
 
-                    if (std::getline(token_stream, part, '/') && !part.empty())
+                    if (std::getline(token_stream, index, '/') && !index.empty())
                     {
-                        normal = std::stoi(part) - 1;
+                        normal = std::stoi(index) - 1;
                     }
 
                     data.indices.emplace_back(position, texcoord, normal);
