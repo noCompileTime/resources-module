@@ -5,13 +5,12 @@ namespace images
 {
     auto TgaImage::load(const std::filesystem::path& path) -> core::data::image
     {
-        tga_header header;
-
       assert(is_regular_file(path));
 
         std::ifstream stream(path, std::ios::binary);
                assert(stream.is_open());
 
+        tga_header header;
         stream.read(reinterpret_cast<char*>(&header), sizeof(tga_header));
                             assert(stream.gcount() == sizeof(tga_header));
 
