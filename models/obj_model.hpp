@@ -1,12 +1,12 @@
 #pragma once
 
-#include "core/data/model.hpp"
+#include "core/model.hpp"
 
 namespace models
 {
     class ObjModel
     {
     public:
-        static auto load(const std::filesystem::path& path) -> core::data::model;
+        static auto load(const std::filesystem::path& path) -> core::model;
     };
 }

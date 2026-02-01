@@ -3,7 +3,7 @@
 
 namespace models
 {
-    auto ObjModel::load(const std::filesystem::path& path) -> core::data::model
+    auto ObjModel::load(const std::filesystem::path& path) -> core::model
     {
         uint32_t index = 0;
 
@@ -18,8 +18,9 @@ namespace models
             geometry.elements.emplace_back(index++);
         }
 
-        core::data::model model;
-                          model.geometry = geometry;
-        return model;
+        core::model model;
+                    model.geometry = geometry;
+
+             return model;
     }
 }
