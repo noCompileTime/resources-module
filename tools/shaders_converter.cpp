@@ -31,10 +31,10 @@ namespace tools
         if (const auto ext  = input.extension().string();
                        ext == ".vert" || ext == ".frag")
         {
-            const auto   now_t = std::filesystem::file_time_type::clock::now();
-            const auto lastw_t = last_write_time(input);
+            const auto  now_time = std::filesystem::file_time_type::clock::now();
+            const auto last_time = last_write_time(input);
 
-            if (const auto age = std::chrono::duration_cast<std::chrono::seconds>(now_t - lastw_t).count();
+            if (const auto age = std::chrono::duration_cast<std::chrono::seconds>(now_time - last_time).count();
                            age < seconds || seconds == -1)
             {
                 const auto cmd = std::format("glslangvalidator -V -G -S {} -o {} {}", ext.substr(1), out.string(), input.generic_string());
