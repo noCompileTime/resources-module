@@ -2,7 +2,7 @@
 
 namespace core
 {
-    struct model
+    struct model // TODO move this into some data folder?
     {
         data::geometry<vertex::type::model> geometry;
     };
