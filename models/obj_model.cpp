@@ -11,10 +11,7 @@ namespace models
 
         for (const auto data = ObjParser::parse(path); const auto& [position, texcoord, normal] : data.indices)
         {
-            geometry.vertices.emplace_back(data.positions[position],
-                                           data.texcoords[texcoord],
-                                           data.normals  [normal]);
-
+            geometry.vertices.emplace_back(data.positions[position], data.texcoords[texcoord], data.normals [normal]);
             geometry.elements.emplace_back(index++);
         }
 
