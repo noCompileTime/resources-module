@@ -6,8 +6,7 @@ namespace tools
     {
         if (seconds != 0)
         {
-            assert(is_directory(input));
-            assert(is_directory(output));
+          assert(is_directory(input));
 
             if (!is_directory(output))
             {
@@ -26,6 +25,8 @@ namespace tools
 
     auto ShadersConverter::convert_file(const std::filesystem::path& input, const std::filesystem::path& output, const int32_t seconds) -> void
     {
+          assert(is_directory(output));
+
             const auto out  = output / input.filename();
 
         if (const auto ext  = input.extension().string();
