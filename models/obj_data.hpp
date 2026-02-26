@@ -10,6 +10,6 @@ namespace models
         std::vector<math::vec2> texcoords;
         std::vector<math::vec3> normals;
 
-        std::vector<std::tuple<uint32_t, uint32_t, uint32_t>> indices;
+        std::vector<std::tuple< uint32_t, uint32_t, uint32_t>> indices;
     };
 }
