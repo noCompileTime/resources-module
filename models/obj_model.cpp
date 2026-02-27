@@ -9,9 +9,9 @@ namespace models
 
         core::data::geometry<core::vertex::type::model> geometry;
 
-        for (const auto data = ObjParser::parse(path); const auto& [position, texcoord, normal] : data.indices)
+        for (const auto data = ObjParser::parse(path); const auto& [v, vt, vn] : data.indices)
         {
-            geometry.vertices.emplace_back(data.positions[position], data.texcoords[texcoord], data.normals [normal]);
+            geometry.vertices.emplace_back(data.positions[v], data.texcoords[vt], data.normals [vn]);
             geometry.elements.emplace_back(index++);
         }
 
