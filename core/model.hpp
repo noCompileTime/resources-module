@@ -4,6 +4,6 @@ namespace core
 {
     struct model
     {
-        data::geometry<vertex::type::model> geometry;
+        std::vector<data::geometry<vertex::type::model>> geometries;
     };
 }

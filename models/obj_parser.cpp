@@ -26,25 +26,26 @@ namespace models
 
             if (prefix == "o")
             {
-                line_stream >> data.object_name;
+                               data.objects.emplace_back();
+                line_stream >> data.objects.        back().name;
             }
             else if (prefix == "v")
             {
-                math::vec3 position;
+                math::vec3     position;
                 line_stream >> position.x >> position.y >> position.z;
 
                 data.positions.emplace_back(position);
             }
             else if (prefix == "vn")
             {
-                math::vec3 normal;
+                math::vec3     normal;
                 line_stream >> normal.x >> normal.y >> normal.z;
 
                 data.normals.emplace_back(normal);
             }
             else if (prefix == "vt")
             {
-                math::vec2 texcoord;
+                math::vec2     texcoord;
                 line_stream >> texcoord.u >> texcoord.v;
 
                 data.texcoords.emplace_back(texcoord);
@@ -75,7 +76,7 @@ namespace models
                         normal = std::stoi(index) - 1;
                     }
 
-                    data.indices.emplace_back(position, texcoord, normal);
+                    data.objects.back().indices.emplace_back(position, texcoord, normal);
                 }
             }
         }
