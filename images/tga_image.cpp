@@ -3,14 +3,14 @@
 
 namespace images
 {
-    auto TgaImage::load(const std::filesystem::path& path) -> core::data::image
+    auto TgaImage::load(const std::filesystem::path& path) -> core::image
     {
       assert(is_regular_file(path));
 
         std::ifstream stream(path, std::ios::binary);
                assert(stream.is_open());
 
-        tga_header header;
+         tga_header header;
         stream.read(reinterpret_cast<char*>(&header), sizeof(tga_header));
                             assert(stream.gcount() == sizeof(tga_header));
 
@@ -23,7 +23,8 @@ namespace images
 
         for (auto i = 0; i < size; i += channels)
         {
-            std::swap(content[i], content[i + 2]);
+            std::swap(content[i],
+                      content[i + 2]);
         }
 
         return
