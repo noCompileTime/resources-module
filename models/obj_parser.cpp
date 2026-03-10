@@ -26,8 +26,9 @@ namespace models
 
             if (prefix == "o")
             {
-                               data.objects.emplace_back();
-                line_stream >> data.objects.        back().name;
+                auto& [name, indices] = data.objects.emplace_back();
+
+                line_stream >> name;
             }
             else if (prefix == "v")
             {
@@ -54,29 +55,31 @@ namespace models
             {
                 std::string token;
 
+                auto& [name, indices] = data.objects.back();
+
                 while (line_stream >> token)
                 {
                     std::string index;
                     std::stringstream token_stream(token);
 
-                    int32_t position, texcoord, normal;
+                    obj_indices obj_indices;
 
                     if (std::getline(token_stream, index, '/') && !index.empty())
                     {
-                        position = std::stoi(index) - 1;
+                        obj_indices.position = std::stoi(index) - 1;
                     }
 
                     if (std::getline(token_stream, index, '/') && !index.empty())
                     {
-                        texcoord = std::stoi(index) - 1;
+                        obj_indices.texcoord = std::stoi(index) - 1;
                     }
 
                     if (std::getline(token_stream, index, '/') && !index.empty())
                     {
-                        normal = std::stoi(index) - 1;
+                        obj_indices.normal = std::stoi(index) - 1;
                     }
 
-                    data.objects.back().indices.emplace_back(position, texcoord, normal);
+                    indices.emplace_back(obj_indices);
                 }
             }
         }
