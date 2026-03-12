@@ -10,7 +10,8 @@ namespace images
         std::ifstream stream(path, std::ios::binary);
                assert(stream.is_open());
 
-         tga_header header;
+        tga_header header;
+
         stream.read(reinterpret_cast<char*>(&header), sizeof(tga_header));
                             assert(stream.gcount() == sizeof(tga_header));
 
