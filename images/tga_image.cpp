@@ -5,22 +5,22 @@ namespace images
 {
     auto TgaImage::load(const std::filesystem::path& path) -> core::image
     {
-      assert(is_regular_file(path));
+      assert(is_regular_file(path)); // TODO handle different if there is no file
 
-        std::ifstream stream(path, std::ios::binary);
-               assert(stream.is_open());
+        std::ifstream stream(path, std::ios::in | std::ios::binary);
+               assert(stream);
 
         tga_header header;
 
         stream.read(reinterpret_cast<char*>(&header), sizeof(tga_header));
-                            assert(stream.gcount() == sizeof(tga_header));
+                            assert(stream.gcount() == sizeof(tga_header)); // TODO handle different if there is a corrupted tga
 
         const auto channels = header.pixel_depth / 8;
         const auto     size = header.width * header.height * channels;
 
                        std::vector<uint8_t> content(size);
         stream.read(reinterpret_cast<char*>(content.data()),  size);
-                                    assert(stream.gcount() == size);
+                                    assert(stream.gcount() == size); // TODO handle different if there is a corrupted tga
 
         for (auto i = 0; i < size; i += channels)
         {
@@ -33,7 +33,7 @@ namespace images
             header.width,
             header.height,
             channels,
-            content
+            std::move(content)
         };
     }
 }
