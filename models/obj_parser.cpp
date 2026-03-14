@@ -47,7 +47,7 @@ namespace models
             else if (prefix == "vt")
             {
                 math::vec2     texcoord;
-                line_stream >> texcoord.u >> texcoord.v;
+                line_stream >> texcoord.x >> texcoord.y;
 
                 data.texcoords.emplace_back(texcoord);
             }
