@@ -11,7 +11,7 @@ namespace models
         {
             uint32_t index = 0;
 
-            core::data::geometry<core::vertex::type::model> geometry;
+            core::geometry<core::vertex::type::model> geometry;
 
             for (const auto& [position, texcoord, normal] : indices)
             {

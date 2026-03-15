@@ -1,9 +1,11 @@
 #pragma once
 
+#include "core/geometry.hpp"
+
 namespace core
 {
     struct model
     {
-        std::vector<data::geometry<vertex::type::model>> geometries;
+        std::vector<geometry<vertex::type::model>> geometries;
     };
 }
