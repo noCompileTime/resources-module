@@ -1,4 +1,4 @@
 #=======================================================================================================================
-target_include_directories(${PROJECT_NAME} PUBLIC ..)
-     target_link_libraries(${PROJECT_NAME} PUBLIC common_module)
+target_include_directories(${PROJECT_NAME} PRIVATE PUBLIC ..)
+     target_link_libraries(${PROJECT_NAME} PRIVATE common_module)
 #=======================================================================================================================
