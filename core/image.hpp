@@ -4,9 +4,9 @@ namespace core
 {
     struct image
     {
-        int32_t width;
-        int32_t height;
-        int32_t channels;
+        std::int32_t width;
+        std::int32_t height;
+        std::int32_t channels;
 
         std::vector<uint8_t> pixels;
     };
