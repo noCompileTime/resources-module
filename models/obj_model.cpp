@@ -13,9 +13,9 @@ namespace models
 
             core::geometry<core::vertex::type::model> geometry;
 
-            for (const auto& [position, texcoord, normal] : indices)
+            for (const auto& [position, normal, texcoord] : indices)
             {
-                geometry.vertices.emplace_back(data.positions[position], data.texcoords[texcoord], data.normals[normal]);
+                geometry.vertices.emplace_back(data.positions[position], data.normals[normal], data.texcoords[texcoord]);
                 geometry.elements.emplace_back(index++);
             }
 
