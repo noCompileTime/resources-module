@@ -16,7 +16,7 @@ namespace models
             for (const auto& [position, normal, texcoord] : indices)
             {
                 geometry.vertices.emplace_back(data.positions[position], data.normals[normal], data.texcoords[texcoord]);
-                geometry.elements.emplace_back(index++);
+                geometry.elements.emplace_back(index++); // TODO maybe here use a primitive to represent the triangle? to not do as many emplace_back?
             }
 
             model.geometries.emplace_back(geometry);
