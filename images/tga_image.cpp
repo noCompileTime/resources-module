@@ -32,9 +32,7 @@ namespace images
         return
         {
             header.width,
-            header.height,
-            channels,
-            std::move(content)
+            header.height, channels, std::move(content)
         };
     }
 }
