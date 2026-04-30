@@ -5,7 +5,7 @@ layout (location = 1) in vec2 in_texcoord;
 
 layout (location = 0) out vec4 out_color;
 
-layout (location = 0) uniform sampler2D u_albedo_tex;
+layout (location = 0) uniform sampler2D u_albedo_texture;
 
 layout (binding = 2, std140) uniform material_ubo
 {
@@ -14,5 +14,5 @@ layout (binding = 2, std140) uniform material_ubo
 
 void main()
 {
-    out_color = texture(u_albedo_tex, in_texcoord);
+    out_color = texture(u_albedo_texture, in_texcoord);
 }
