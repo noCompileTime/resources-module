@@ -2,6 +2,7 @@
 
 layout (location = 0) in vec3 in_normal;
 layout (location = 1) in vec2 in_texcoord;
+//layout (location = 2) in vec3 in_position;
 
 layout (location = 0) out vec4 out_color;
 
@@ -12,7 +13,7 @@ layout (binding = 2, std140) uniform material_ubo
     vec3 albedo_color;
 };
 
-layout (binding = 3, std140) uniform camera_ubo
+layout (binding = 3, std140) uniform light_ubo
 {
     vec3  color;
     float ambient;

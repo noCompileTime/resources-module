@@ -6,6 +6,7 @@ layout (location = 2) in vec2 in_texcoord;
 
 layout (location = 0) out vec3 out_normal;
 layout (location = 1) out vec2 out_texcoord;
+//layout (location = 2) out vec3 out_position;
 
 layout (binding = 0, std140) uniform camera_ubo
 {
@@ -16,6 +17,7 @@ layout (binding = 0, std140) uniform camera_ubo
 layout (binding = 1, std140) uniform transform_ubo
 {
     mat4 model;
+    //mat3 normal;
 };
 
 out gl_PerVertex
@@ -27,6 +29,7 @@ void main()
 {
     gl_Position = projection * view * model * vec4(in_position, 1.0);
 
-    out_normal   = mat3(model) * in_normal;
+    out_normal   = mat3(model) * in_normal; // mat3(transpose(inverse(model))) * in_normal;
     out_texcoord = in_texcoord;
+    //out_position = vec3(model * vec4(in_position, 1.0));
 }
