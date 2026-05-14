@@ -12,7 +12,7 @@ namespace models
         {
             uint32_t index = 0;
 
-            core::geometry<core::vertex::type::model> geometry;
+            core::vertex::geometry<core::vertex::type::model> geometry;
 
             // TODO use geometry reserve here after checking the number of reallocation
 
