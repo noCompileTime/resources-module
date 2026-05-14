@@ -17,7 +17,7 @@ layout (binding = 3, std140) uniform light_ubo
 {
     vec3  color;
     float ambient;
-    vec3  extra; // can be either direction or position
+    vec3  extra;
 } u_light;
 
 void main()
