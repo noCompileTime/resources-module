@@ -6,6 +6,7 @@ namespace models
     auto ObjModel::load(const std::filesystem::path& path) -> core::model
     {
         core::model model;
+        // TODO use a reserve here based on the number of objects?
 
         for (const auto data = ObjParser::parse(path); const auto& [name, indices] : data.objects)
         {
