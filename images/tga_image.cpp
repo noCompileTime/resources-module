@@ -5,7 +5,7 @@ namespace images
 {
     auto TgaImage::load(const std::filesystem::path& path) -> core::image
     {
-        tga_header header;
+        tga_header header; // TODO handle RLE compression
 
         assert(is_regular_file(path)); // TODO handle different if there is no file
 
