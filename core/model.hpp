@@ -1,11 +1,11 @@
 #pragma once
 
-#include "core/vertex/geometry.hpp"
+#include "geometry/mesh.hpp"
 
 namespace core
 {
     struct model
     {
-        std::vector<vertex::geometry<vertex::type::model>> geometries; // TODO here to have a map? or a flat map? to seach stuff by name?
+        std::vector<geometry::mesh<geometry::vertex::model>> meshes; // TODO here to have a map? or a flat map? to seach stuff by name?
     };
 }
