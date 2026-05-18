@@ -1,6 +1,7 @@
 #pragma once
 
 #include "geometry/mesh.hpp"
+#include "geometry/vertex/model.hpp"
 
 namespace core
 {
