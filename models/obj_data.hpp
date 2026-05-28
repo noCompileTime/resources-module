@@ -2,9 +2,6 @@
 
 #include "obj_object.hpp"
 
-#include "math/vec3.hpp"
-#include "math/vec2.hpp"
-
 namespace models
 {
     struct obj_data
