@@ -2,6 +2,9 @@
 
 #include "core/model.hpp"
 
+#include <filesystem>
+#include <fstream>
+
 namespace models
 {
     class ObjModel

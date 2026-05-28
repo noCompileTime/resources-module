@@ -2,6 +2,8 @@
 
 #include "obj_data.hpp"
 
+#include <filesystem>
+
 namespace models
 {
     class ObjParser

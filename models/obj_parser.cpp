@@ -1,5 +1,8 @@
 #include "obj_parser.hpp"
 
+#include <fstream>
+#include <cassert>
+
 namespace models
 {
     auto ObjParser::parse(const std::filesystem::path& path) -> obj_data

@@ -1,6 +1,8 @@
 #include "tga_image.hpp"
 #include "tga_header.hpp"
 
+#include <cassert>
+
 namespace images
 {
     auto TgaImage::load(const std::filesystem::path& path) -> core::image

@@ -2,6 +2,9 @@
 
 #include "obj_indices.hpp"
 
+#include <string>
+#include <vector>
+
 namespace models
 {
     struct obj_object

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 namespace core
 {
     struct image // TODO can this go in common? should go inside common?

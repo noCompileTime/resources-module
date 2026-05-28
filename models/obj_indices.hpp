@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 namespace models
 {
     struct obj_indices
