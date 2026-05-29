@@ -5,7 +5,7 @@
 
 namespace images
 {
-    auto TgaImage::load(const std::filesystem::path& path) -> core::image
+    auto TgaImage::load(const std::filesystem::path& path) -> core::image // TODO move this inside the header
     {
         tga_header header; // TODO handle RLE compression
 
