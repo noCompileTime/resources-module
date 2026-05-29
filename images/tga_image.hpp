@@ -10,6 +10,6 @@ namespace images
     class TgaImage
     {
     public:
-        static auto load(const std::filesystem::path& path) -> core::image;
+        [[nodiscard]] static auto load(const std::filesystem::path& path) -> core::image;
     };
 }

@@ -10,6 +10,6 @@ namespace models
     class ObjModel
     {
     public:
-        static auto load(const std::filesystem::path& path) -> core::model;
+        [[nodiscard]] static auto load(const std::filesystem::path& path) -> core::model;
     };
 }
