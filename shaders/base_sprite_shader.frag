@@ -13,5 +13,5 @@ layout (binding = 2, std140) uniform material_ubo
 
 void main()
 {
-    out_color = texture(u_albedo_texture, in_texcoord);
+    out_color = texture(u_albedo_texture, in_texcoord); // TODO add the albedo_color here
 }
