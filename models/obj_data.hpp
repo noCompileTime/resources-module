@@ -1,9 +1,9 @@
 #pragma once
 
-#include "obj_object.hpp"
-
 #include "math/vec2.hpp"
 #include "math/vec3.hpp"
+
+#include "obj_object.hpp"
 
 namespace models
 {
