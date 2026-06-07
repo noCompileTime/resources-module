@@ -1,6 +1,6 @@
 #pragma once
 
-#include "geometry/geometry_types.hpp"
+#include "geometry/types.hpp"
 
 namespace core
 {
