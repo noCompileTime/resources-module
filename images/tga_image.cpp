@@ -2,7 +2,7 @@
 #include "tga_header.hpp"
 
 #include <cassert>
-#include <filesystem>
+#include <fstream>
 
 namespace images
 {

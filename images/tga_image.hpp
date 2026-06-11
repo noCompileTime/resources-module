@@ -3,7 +3,6 @@
 #include "core/image.hpp"
 
 #include <filesystem>
-#include <fstream>
 
 namespace images
 {
