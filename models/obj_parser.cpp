@@ -1,7 +1,7 @@
 #include "obj_parser.hpp"
 
-#include <fstream>
 #include <cassert>
+#include <fstream>
 
 namespace models
 {
