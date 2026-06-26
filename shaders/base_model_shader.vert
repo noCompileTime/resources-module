@@ -27,7 +27,7 @@ out gl_PerVertex
 
 void main()
 {
-    gl_Position = projection * view * model * vec4(in_position, 1.0);
+     gl_Position = projection * view * model * vec4(in_position, 1.0); // TODO gl_Position should be last
 
     out_normal   = mat3(model) * in_normal; // mat3(transpose(inverse(model))) * in_normal;
     out_texcoord = in_texcoord;

@@ -31,5 +31,5 @@ void main()
     vec4 light_color = vec4(ambient_color + diffuse_color, 1.0);
     vec4 model_color = texture(u_albedo_texture, in_texcoord); // TODO add the albedo_color here
 
-    out_color = light_color * model_color;
+     out_color = light_color * model_color;
 }

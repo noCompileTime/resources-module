@@ -23,7 +23,7 @@ out gl_PerVertex
 
 void main()
 {
-    gl_Position = projection * view * model * vec4(in_position, 1.0);
+     gl_Position = projection * view * model * vec4(in_position, 1.0); // TODO gl_Position should be last
 
     out_color = in_color;
 }
