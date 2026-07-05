@@ -18,7 +18,7 @@ namespace images
         uint16_t   y_origin;
         uint16_t      width;
         uint16_t     height;
-        uint8_t pixel_depth;
+        uint8_t       depth;
         uint8_t  descriptor;
     };
 
