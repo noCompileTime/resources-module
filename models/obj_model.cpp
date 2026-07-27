@@ -5,10 +5,12 @@ namespace models
 {
     auto ObjModel::load(const std::filesystem::path& path) -> core::model
     {
-        core::model model;
-        // TODO use a reserve here based on the number of objects?
+        const auto data = ObjParser::parse(path);
 
-        for (const auto data = ObjParser::parse(path); const auto& [name, indices] : data.objects)
+        core::model model;
+                    model.geometries.reserve(data.objects.size());
+
+        for (const auto& [name, indices] : data.objects)
         {
             uint32_t index = 0;
 
