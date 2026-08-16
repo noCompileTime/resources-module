@@ -2,13 +2,13 @@
 
 layout (location = 0) in vec3 in_position;
 
-layout (binding = 0, std140) uniform camera_ubo
+layout (binding = 0, std140) uniform camera_ubo // TODO should all the matrices be in the same ubo? we update it with the glBufferRange?
 {
     mat4 view;
     mat4 projection;
 };
 
-layout (binding = 1, std140) uniform transform_ubo
+layout (binding = 1, std140) uniform transform_ubo // TODO should all the matrices be in the same ubo?
 {
     mat4 model;
 };
